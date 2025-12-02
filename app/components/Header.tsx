@@ -1,10 +1,11 @@
 import Link from "next/link";
 
+import Logo from "./Logo";
 export default function Header() {
   return <header className="bg-white">
-    <div className="container flex items-center justify-between  mx-auto p-5">
+    <div className="container flex items-center justify-between  mx-auto p-5 ">
       {/** Logo */}
-      <div className="font-bold text-2xl">StudyBuddy</div>
+      <Logo />
 
       {/** Action or buttons */}
       <div className="flex gap-3">
