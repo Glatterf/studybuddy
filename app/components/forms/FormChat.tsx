@@ -82,7 +82,7 @@ export default function FormChat() {
                         className="bg-gray-200 flex flex-col items-center p-3 rounded-md"
                       >
                         <div className="[&>p]:mb-3 [&>p]:last:mb-0 [&>ul]:mb-4 [&>ul>li]:list-disc [&>ul>li]:ml-5 [&>ol>li]:list-decimal [&>ol>li]:ml-5">
-                          {part.text}
+                          <ReactMarkdown>{part.text}</ReactMarkdown>
                         </div>
                       </div>
                     )
