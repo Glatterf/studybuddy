@@ -34,3 +34,7 @@ form {
     @apply bg-gray-200 border-gray-300 hover:bg-gray-300 hover:border-gray-500;
   }
 }
+
+[data-loading='true'] {
+  @apply animate-pulse opacity-50;
+}

@@ -1,7 +1,57 @@
+'use client'
+
+import { useChat } from '@ai-sdk/react'
+import { use, useState } from 'react'
+
 export default function FormChat() {
+  // AI SDK
+  const { messages, sendMessage } = useChat({
+    onError: (error) => {
+      console.log('error: ', error)
+      setError(error.toString())
+    },
+  })
+
+  // States
+  const [error, setError] = useState('')
+  const [input, setInput] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+
+  // Functions
+  function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault()
+
+      // trigger
+      const form = e.currentTarget.form
+      if (form && input.trim()) {
+        form.requestSubmit()
+      }
+    }
+  }
+
+  // Handle chat
+  async function handleChat(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+
+    if (!input) return
+
+    try {
+      setIsLoading(true)
+      await sendMessage({ text: input })
+      setInput('')
+    } catch (error: any) {
+      console.log('error: ', error)
+      setError(error.toString())
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   return (
     <form
-      data-loading="false"
+      data-loading={isLoading}
+      onSubmit={(e) => handleChat(e)}
       className="max-w-md w-full mx-auto flex-1 sticky bottom-10 flex flex-col gap-2 bg-white"
     >
       <div className="form-control">
@@ -9,11 +59,20 @@ export default function FormChat() {
           name="message"
           placeholder="What do you want to know?"
           className="w-full p-2 border rounded resize-none"
+          onKeyDown={handleKeyDown}
+          value={input}
+          onChange={(e) => {
+            console.log(e.currentTarget.value)
+            setInput(e.currentTarget.value)
+          }}
         ></textarea>
       </div>
+
+      {error && <div className="alert alert--error">{error}</div>}
+
       <div className="flex justify-center mt-2">
         <button type="submit" className="button button--default">
-          Send
+          {isLoading ? 'Thinking...' : 'Send'}
         </button>
       </div>
     </form>
