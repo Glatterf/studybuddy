@@ -11,9 +11,7 @@ export default function ({
   return (
     <div className="flex flex-col min-h-dvh border">
       <Header />
-      <main className={`container mx-auto p-5 flex-1 ${className}`}>
-        {children}
-      </main>
+      <main className={` ${className}`}>{children}</main>
       <Footer />
     </div>
   )
