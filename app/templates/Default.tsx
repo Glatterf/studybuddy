@@ -13,8 +13,8 @@ export default function Default({
       {/* Sticky header */}
       <Header />
 
-      {/* Scrollable main content */}
-      <main className={`flex-1 overflow-auto ${className}`}>{children}</main>
+      {/* main content */}
+      <main>{children}</main>
 
       {/* Footer stays at bottom after scrolling */}
       <Footer />

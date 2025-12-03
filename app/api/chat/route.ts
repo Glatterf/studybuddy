@@ -31,7 +31,13 @@ export async function POST(req: Request) {
     - Personalised tutoring and chat experience.
     - Answer based on their uploaded documents (RAG)
   `
-    : ``
+    : `
+    You are StudyBuddy, a friendly virtual tutor.
+    The user is logged in. Their name is ${name}.
+    Use their name when addressing them and provide a personalised experience.
+    - Personalised tutoring and chat experience.
+    - Answer based on their uploaded documents (RAG)
+    `
 
   const result = streamText({
     model: google('gemini-2.5-flash'),

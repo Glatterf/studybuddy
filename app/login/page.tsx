@@ -1,6 +1,8 @@
 'use client'
 
-import Default from '../templates/Default'
+import Bare from '../templates/Bare'
+import Logo from '../components/Logo'
+import FormsLogin from '../components/forms/FormLogin'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -8,103 +10,29 @@ export default function Login() {
   const [showForgotPassword, setShowForgotPassword] = useState(false)
 
   return (
-    <Default className="!p-0 !max-w-none !mx-0 bg-gradient-to-br from-orange-50 to-teal-50">
-      <div className="flex items-center justify-center min-h-full py-12 px-4">
+    <Bare className="!p-0 !max-w-none !mx-0 bg-gradient-to-br from-orange-50 to-teal-50">
+      {/* Logo in upper left */}
+      <div className="absolute top-6 left-6 z-10">
+        <Logo />
+      </div>
+
+      <div className="flex items-center justify-center min-h-screen py-12 px-4">
         <div className="w-full max-w-2xl">
           {/* Card */}
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
             {/* Header Section */}
             <div className="bg-gradient-to-r from-orange-500 to-teal-500 px-10 py-8 text-white">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                  <svg
-                    className="w-7 h-7 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                    />
-                  </svg>
-                </div>
-                <h1 className="text-3xl font-bold">Welcome Back</h1>
+              <div className="text-center">
+                <h1 className="text-3xl font-bold mb-2">Welcome Back</h1>
+                <p className="text-white/90">
+                  Sign in to continue your learning journey
+                </p>
               </div>
-              <p className="text-white/90">
-                Sign in to continue your learning journey
-              </p>
             </div>
 
             {/* Form Section */}
             <div className="px-10 py-8">
-              <form className="space-y-5">
-                {/* Email */}
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="you@example.com"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all duration-200 text-base"
-                    required
-                  />
-                </div>
-
-                {/* Password */}
-                <div>
-                  <label
-                    htmlFor="password"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="••••••••"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all duration-200 text-base"
-                    required
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowForgotPassword(true)}
-                    className="text-sm text-orange-600 hover:text-orange-700 font-medium underline mt-2"
-                  >
-                    Forgot Password?
-                  </button>
-                </div>
-
-                {/* Remember Me */}
-                <div className="flex items-center gap-3">
-                  <input
-                    type="checkbox"
-                    id="remember"
-                    name="remember"
-                    className="w-5 h-5 text-orange-500 border-gray-300 rounded focus:ring-orange-400"
-                  />
-                  <label htmlFor="remember" className="text-sm text-gray-700">
-                    Remember me for 30 days
-                  </label>
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full py-3.5 bg-gradient-to-r from-orange-500 to-teal-500 text-white font-semibold rounded-lg hover:from-orange-600 hover:to-teal-600 shadow-md hover:shadow-lg transition-all duration-200 text-base"
-                >
-                  Sign In
-                </button>
-              </form>
+              <FormsLogin />
 
               {/* Sign Up Link */}
               <div className="mt-6 text-center text-sm text-gray-600">
@@ -232,6 +160,6 @@ export default function Login() {
           animation: slideUp 0.3s ease-out;
         }
       `}</style>
-    </Default>
+    </Bare>
   )
 }

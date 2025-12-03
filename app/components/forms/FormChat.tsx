@@ -61,7 +61,7 @@ export default function FormChat() {
       {/*Message Display Area with scrolling*/}
       <div
         ref={messagesContainerRef}
-        className="flex-1 max-h-[600px] overflow-y-auto overflow-x-hidden mb-4 pr-2 
+        className="flex-1 max-h-[700px] overflow-y-auto overflow-x-hidden mb-4 pr-2 
              scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400"
       >
         {messages && messages.length > 0 ? (

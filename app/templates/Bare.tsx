@@ -1,9 +1,19 @@
-export default function Bars({
+import { Toaster, toast } from 'react-hot-toast'
+export default function Bare({
   className,
   children,
 }: {
-  className: String
-  children?: React.ReactNode
+  className?: string
+  children: React.ReactNode
 }) {
-  return <></>
+  return (
+    <section>
+      <div
+        className={`container min-h-dvh flex flex-col items-center justify-center gap-5 ${className}`}
+      >
+        {children}
+      </div>
+      <Toaster />
+    </section>
+  )
 }
