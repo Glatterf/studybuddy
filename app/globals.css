@@ -18,6 +18,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.container::-webkit-scrollbar {
+  display: none;
+}
+
 form {
   input,
   textarea {

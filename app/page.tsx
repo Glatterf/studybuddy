@@ -3,8 +3,8 @@ import FormChat from '@/app/components/forms/FormChat'
 
 export default function Home() {
   return (
-    <Default className="flex items-center justify-center bg-gradient-to-br from-orange-50 to-teal-50">
-      <div className="flex flex-col lg:flex-row gap-0 w-full h-screen">
+    <Default className="flex items-center justify-center bg-gradient-to-br from-orange-50 to-teal-50 scrollbar-none">
+      <div className="flex flex-col lg:flex-row gap-0 w-full h-screen scrollbar-none">
         {/** Welcome message - Left Side */}
         <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-orange-500 to-teal-600 relative overflow-hidden">
           {/* Decorative circles */}
@@ -135,7 +135,7 @@ export default function Home() {
 
         {/** Form - Right Side */}
         <div className="flex-1 flex items-center justify-center bg-white">
-          <div className="w-full max-w-lg px-12">
+          <div className="w-full max-w-full px-12">
             <FormChat />
           </div>
         </div>
