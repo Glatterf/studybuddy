@@ -3,17 +3,17 @@ import FormChat from '@/app/components/forms/FormChat'
 
 export default function Home() {
   return (
-    <Default className="flex items-center justify-center bg-gradient-to-br from-orange-50 to-teal-50 scrollbar-none">
-      <div className="flex flex-col lg:flex-row gap-0 w-full h-screen scrollbar-none">
+    <Default className="flex items-center justify-center bg-gradient-to-br from-orange-50 to-teal-50  [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="flex flex-col lg:flex-row gap-0 w-full h-screen ">
         {/** Welcome message - Left Side */}
-        <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-orange-500 to-teal-600 relative overflow-hidden">
+        <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-orange-500 to-teal-600 relative ">
           {/* Decorative circles */}
           <div className="absolute top-20 left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl"></div>
 
           <div className="max-w-lg w-full px-12 relative z-10">
             <div className="flex flex-col gap-6">
-              {/* Icon/Logo area */}
+              {/* icon area */}
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                   <svg

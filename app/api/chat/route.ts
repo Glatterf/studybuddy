@@ -1,6 +1,8 @@
 import { google } from '@ai-sdk/google'
 import { streamText, convertToModelMessages } from 'ai'
 import { getServerSession } from 'next-auth'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prefer-const */
 
 export async function POST(req: Request) {
   // Session

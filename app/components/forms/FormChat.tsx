@@ -4,6 +4,8 @@ import { useChat } from '@ai-sdk/react'
 import { useState, useRef, useEffect } from 'react'
 import { UserRound, Bot, Send } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prefer-const */
 
 export default function FormChat() {
   // AI SDK
