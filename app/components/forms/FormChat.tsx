@@ -138,14 +138,13 @@ export default function FormChat() {
           <textarea
             name="message"
             placeholder="Ask me anything..."
-            className="w-full p-3 pr-12 border-2 border-gray-200 rounded-xl resize-none 
-            focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all 
-            duration-200 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent
-             
-            [scrollbar-width:none]
-            [overflow:overlay]
-            [&::-webkit-scrollbar-button]:hidden
-            [&::-webkit-resizer]:hidden"
+            className="w-full p-4 pr-12 border-2 border-gray-200 rounded-2xl resize-none 
+      focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all 
+      duration-200 min-h-15 max-h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent
+      [scrollbar-width:none]
+      [overflow:overlay]
+      [&::-webkit-scrollbar-button]:hidden
+      [&::-webkit-resizer]:hidden"
             rows={1}
             onKeyDown={handleKeyDown}
             value={input}
@@ -157,19 +156,24 @@ export default function FormChat() {
                 Math.min(e.currentTarget.scrollHeight, 128) + 'px'
             }}
             disabled={isLoading}
-          ></textarea>
+          />
 
-          <button
-            type="submit"
-            disabled={isLoading || !input.trim()}
-            className="absolute right-3 bottom-3 p-2 bg-gradient-to-r from-orange-500 to-teal-500 text-white rounded-lg hover:from-orange-600 hover:to-teal-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-md hover:shadow-lg"
-          >
-            {isLoading ? (
-              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-            ) : (
-              <Send className="w-5 h-5" />
-            )}
-          </button>
+          {/* Button aligned with textarea's bottom-right */}
+          <div className="absolute right-2 bottom-4 flex items-center justify-center">
+            <button
+              type="submit"
+              disabled={isLoading || !input.trim()}
+              className="p-2 bg-gradient-to-r from-orange-500 to-teal-500 text-white rounded-lg 
+        hover:from-orange-600 hover:to-teal-600 disabled:opacity-50 disabled:cursor-not-allowed 
+        transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center"
+            >
+              {isLoading ? (
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+              ) : (
+                <Send className="w-5 h-5" />
+              )}
+            </button>
+          </div>
         </div>
 
         {error && (
