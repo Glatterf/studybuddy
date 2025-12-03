@@ -3,7 +3,7 @@ import FormChat from '@/app/components/forms/FormChat'
 
 export default function Home() {
   return (
-    <Default className="flex items-center justify-center bg-gradient-to-br from-orange-50 to-teal-50  [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <Default className="flex items-center justify-center bg-gradient-to-br from-orange-50 to-teal-50">
       <div className="flex flex-col lg:flex-row gap-0 w-full h-screen ">
         {/** Welcome message - Left Side */}
         <div className="flex-1 flex items-center justify-center bg-gradient-to-br from-orange-500 to-teal-600 relative ">

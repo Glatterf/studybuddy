@@ -3,7 +3,7 @@ import Logo from './Logo'
 
 export default function Header() {
   return (
-    <header className="bg-white border-b border-gray-100 relative overflow-hidden scrollbar-none">
+    <header className="bg-white border-b border-gray-100 relative overflow-hidden sticky top-0 z-50">
       <div className="px-5 py-5 flex items-center justify-between p-5 relative z-5">
         <div className="flex items-center gap-3">
           <Logo />

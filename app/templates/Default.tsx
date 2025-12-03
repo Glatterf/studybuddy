@@ -9,9 +9,14 @@ export default function Default({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex flex-col min-h-dvh border">
+    <div className="flex flex-col min-h-dvh border  [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      {/* Sticky header */}
       <Header />
-      <main className={` ${className}`}>{children}</main>
+
+      {/* Scrollable main content */}
+      <main className={`flex-1 overflow-auto ${className}`}>{children}</main>
+
+      {/* Footer stays at bottom after scrolling */}
       <Footer />
     </div>
   )
